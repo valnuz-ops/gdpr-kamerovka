@@ -131,6 +131,8 @@ input[type=number]{-moz-appearance:textfield}input[type=number]::-webkit-inner-s
 .suffix input{padding-right:30px}
 .suffix:after{content:attr(data-s);position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:14px;pointer-events:none}
 .nav{border-top:1px solid var(--line);padding-top:18px}
+.topnav{display:flex;align-items:center;gap:18px;font-size:15px}.topnav a:not(.btn){text-decoration:none;color:var(--ink)}.topnav a:not(.btn):hover{color:var(--acc)}
+@media(max-width:720px){.topnav a:not(.btn){display:none}}
 .plans{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 @media(max-width:720px){.plans{grid-template-columns:1fr}}
 .plan{border:1.5px solid var(--line);border-radius:14px;padding:22px;background:#fff;position:relative;display:flex;flex-direction:column}
@@ -152,7 +154,7 @@ input[type=number]{-moz-appearance:textfield}input[type=number]::-webkit-inner-s
 
 <header><div class="wrap">
   <a class="logo" href="https://www.kamerovka.cz/"><img src="logo.png" alt="Kamerovka.cz – Vaše bezpečí, naše priorita"><span class="tag">GDPR</span></a>
-  <a href="#form" class="btn ghost" style="padding:8px 14px;font-size:15px">Objednat</a>
+  <nav class="topnav"><a href="/balancni-test/">Balanční test</a><a href="/informacni-tabulka/">Tabulka zdarma</a><a href="#cenik">Ceník</a><a href="#form" class="btn ghost" style="padding:8px 14px;font-size:15px">Objednat</a></nav>
 </div></header>
 
 <div class="hero"><div class="wrap">
@@ -178,7 +180,7 @@ input[type=number]{-moz-appearance:textfield}input[type=number]::-webkit-inner-s
     <div class="card"><b>1. Balanční test</b><p>Čtyři kroky podle ÚOOÚ: reálné ohrožení, alternativy, nezbytnost, přiměřenost. <a href="/balancni-test/">Jak balanční test funguje</a></p></div>
     <div class="card"><b>2. Záznam o činnostech zpracování</b><p>Podle čl. 30 GDPR, včetně technických a organizačních opatření.</p></div>
     <div class="card"><b>3. Informace o zpracování</b><p>Druhá informační vrstva pro nástěnku nebo web domu.</p></div>
-    <div class="card"><b>4. Informační tabulka</b><p>A4 k vytištění s údaji podle metodiky ÚOOÚ.</p></div>
+    <div class="card"><b>4. Informační tabulka</b><p>A4 k vytištění s údaji podle metodiky ÚOOÚ. Samotnou tabulku si můžete <a href="/informacni-tabulka/">vytvořit zdarma</a>.</p></div>
     <div class="card"><b>5. Směrnice k provozu</b><p>Kdo smí záznamy vidět, jak je předávat a jak vyřizovat žádosti.</p></div>
     <div class="card"><b>6. Evidence a protokoly</b><p>Kniha přístupů, předávací protokol a návrh usnesení shromáždění (pokud instalace ještě nebyla schválena).</p></div>
   </div>
@@ -348,7 +350,7 @@ input[type=number]{-moz-appearance:textfield}input[type=number]::-webkit-inner-s
   <p style="color:var(--muted);font-size:14px">Vychází z <a href="https://uoou.gov.cz/media/profesional/met-kamerove-systemy-web-08022024.pdf" rel="noopener">Metodiky ÚOOÚ k návrhu a provozování kamerových systémů</a> (únor 2024). Aktualizováno: listopad 2026.</p>
 </div></section>
 
-<footer><div class="wrap">Provozovatel: Oleksii Bilan, IČO 19670168, se sídlem Nad sokolovnou 125/9, 147 00 Praha 4. Fyzická osoba podnikající podle živnostenského zákona, zapsaná v živnostenském rejstříku. Nejsem plátce DPH.<br>info@kamerovka.cz · +420 739 487 777 · <a href="podminky.html">Obchodní podmínky</a> · <a href="zasady.html">Zásady zpracování osobních údajů</a> · <a href="/balancni-test/">Balanční test kamerového systému</a> · <a href="https://www.kamerovka.cz/">Kamerovka.cz – montáž kamer Praha</a></div></footer>
+<footer><div class="wrap">Provozovatel: Oleksii Bilan, IČO 19670168, se sídlem Nad sokolovnou 125/9, 147 00 Praha 4. Fyzická osoba podnikající podle živnostenského zákona, zapsaná v živnostenském rejstříku. Nejsem plátce DPH.<br>info@kamerovka.cz · +420 739 487 777 · <a href="podminky.html">Obchodní podmínky</a> · <a href="zasady.html">Zásady zpracování osobních údajů</a> · <a href="/balancni-test/">Balanční test kamerového systému</a> · <a href="/informacni-tabulka/">Informační tabulka zdarma</a> · <a href="https://www.kamerovka.cz/">Kamerovka.cz – montáž kamer Praha</a></div></footer>
 
 <script>
 // ===================== NASTAVENÍ =====================
@@ -546,6 +548,23 @@ $('next').onclick=async()=>{
   }
 };
 loadDraft();
+// předvyplnění z generátoru tabulky: /#d=<base64 JSON>&t=zaklad|standard
+(function(){
+  const m = location.hash.match(/^#d=([^&]+)(?:&t=(zaklad|standard))?/); if (!m) return;
+  try {
+    const p = JSON.parse(decodeURIComponent(escape(atob(m[1]))));
+    if (p.ico && /^\d{8}$/.test(p.ico)) $('ico').value = p.ico;
+    if (p.nazev) $('nazev').value = String(p.nazev).slice(0,150);
+    const em = String(p.kontakt||'').match(/[^\s,;]+@[^\s,;]+\.[^\s,;]+/); if (em && !$('email').value) $('email').value = em[0];
+    if (p.web && /^https?:\/\//.test(p.web)) $('web').value = p.web;
+    const h = /(\d+)\s*dn/.test(p.uchovani||'') ? +RegExp.$1*24 : (parseInt(p.uchovani)||0);
+    if (h) document.querySelectorAll('.c-uch').forEach(i => { i.value = h; });
+    if (m[2]) { const r = document.querySelector('input[name=tarif][value="'+m[2]+'"]'); if (r) r.checked = true; }
+    camCheck(); saveDraft();
+    history.replaceState(null, '', location.pathname + '#form');
+    setTimeout(() => $('form').scrollIntoView(), 50);
+  } catch (_) {}
+})();
 segAll();
 schvToggle();
 score();
