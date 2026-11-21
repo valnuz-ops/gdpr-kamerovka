@@ -107,13 +107,11 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
       <label for="kontakt">Kontakt pro dotazy a uplatnění práv</label>
       <input type="text" id="kontakt" maxlength="80" placeholder="výbor SVJ, vybor@svj-dum.cz">
       <div class="hint">Doporučujeme obecný kontakt domu, ne soukromý telefon člena výboru.</div>
-      <div class="row">
-        <div id="uchBox"><label for="uchovani">Doba uchování záznamu</label>
-          <select id="uchovani"><option value="24 hodin">24 hodin</option><option value="48 hodin">48 hodin</option><option value="72 hodin" selected>72 hodin</option><option value="7 dní">7 dní</option><option value="14 dní">14 dní</option></select>
-          <div class="warn" id="uchWarn" style="display:none">Dobu delší než 72 hodin je třeba zdůvodnit v balančním testu.</div></div>
-        <div><label for="ucel">Účel</label>
-          <select id="ucel"><option>ochrana majetku a bezpečnost osob v domě</option><option>ochrana majetku a prevence vandalismu</option><option>ochrana majetku, zdraví a bezpečnosti osob</option></select></div>
-      </div>
+      <label for="ucel">Účel</label>
+      <select id="ucel"><option>ochrana majetku a bezpečnost osob v domě</option><option>ochrana majetku a prevence vandalismu</option><option>ochrana majetku, zdraví a bezpečnosti osob</option></select>
+      <div id="uchBox"><label for="uchovani">Doba uchování záznamu</label>
+        <select id="uchovani"><option value="24 hodin">24 hodin</option><option value="48 hodin">48 hodin</option><option value="72 hodin" selected>72 hodin</option><option value="7 dní">7 dní</option><option value="14 dní">14 dní</option></select>
+        <div class="warn" id="uchWarn" style="display:none">Dobu delší než 72 hodin je třeba zdůvodnit v balančním testu.</div></div>
       <label for="vice">Kde najdou podrobné informace</label>
       <input type="text" id="vice" maxlength="80" placeholder="u výboru SVJ a na nástěnce v přízemí">
       <label for="web">Web domu s podrobnými informacemi (nepovinné – vytvoří QR kód)</label>
