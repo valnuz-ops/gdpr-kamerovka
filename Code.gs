@@ -13,6 +13,7 @@
 // ===================== NASTAVENÍ =====================
 const CONFIG = {
   OWNER_EMAIL: 'bilanextllc@gmail.com',      // kam chodí objednávky ke kontrole
+  FROM_EMAIL: 'info@kamerovka.cz',           // odesílatel e-mailů klientům (alias v Gmailu)
   BRAND: 'Kamerovka.cz',
   SERVICE_NAME: 'GDPR dokumentace ke kamerovému systému',
   SITE_URL: 'https://gdpr.kamerovka.cz',
@@ -526,7 +527,7 @@ function sendClientConfirmation_(id, d) {
   const html = '<p>Dobrý den,</p><p>děkujeme za objednávku <b>' + id + '</b> – ' + CONFIG.SERVICE_NAME + ' pro ' + esc(d.spravce.nazev) + '.</p>' +
     '<p>Dokumenty jsme připravili podle Vašich údajů. Nyní je zkontrolujeme a do 1 pracovního dne Vám je pošleme v PDF spolu s fakturou (' + CONFIG.PRICE_CZK + ' Kč, nejsme plátci DPH).</p>' +
     '<p>S pozdravem<br>' + CONFIG.BRAND + '<br>' + CONFIG.SITE_URL + '</p>';
-  MailApp.sendEmail({ to: d.kontakt.email, replyTo: CONFIG.OWNER_EMAIL, name: CONFIG.BRAND, subject: 'Přijali jsme Vaši objednávku ' + id, htmlBody: html });
+  sendAsBrand_(d.kontakt.email, 'Přijali jsme Vaši objednávku ' + id, html, null);
 }
 
 function sendClientDocs_(id, d, pdfs) {
@@ -540,7 +541,15 @@ function sendClientDocs_(id, d, pdfs) {
     '<p>Fakturu zasíláme samostatně. Dokumenty vycházejí z Metodiky ÚOOÚ a z Vašich údajů; nejde o právní službu.</p>' +
     '<p>Potřebujete kamery nainstalovat, rozšířit nebo opravit? Rádi pomůžeme – <a href="https://kamerovka.cz">kamerovka.cz</a>.</p>' +
     '<p>S pozdravem<br>' + CONFIG.BRAND + '</p>';
-  MailApp.sendEmail({ to: d.kontakt.email, replyTo: CONFIG.OWNER_EMAIL, name: CONFIG.BRAND, subject: 'GDPR dokumentace ke kamerovému systému – ' + d.spravce.nazev, htmlBody: html, attachments: pdfs });
+  sendAsBrand_(d.kontakt.email, 'GDPR dokumentace ke kamerovému systému – ' + d.spravce.nazev, html, pdfs);
+}
+
+// Odeslání klientovi z info@kamerovka.cz (pokud je alias v Gmailu nastaven), jinak z účtu skriptu
+function sendAsBrand_(to, subject, html, attachments) {
+  const opts = { htmlBody: html, name: CONFIG.BRAND, replyTo: CONFIG.FROM_EMAIL };
+  if (attachments) opts.attachments = attachments;
+  if (GmailApp.getAliases().indexOf(CONFIG.FROM_EMAIL) !== -1) opts.from = CONFIG.FROM_EMAIL;
+  GmailApp.sendEmail(to, subject, '', opts);
 }
 
 // ===================== POMOCNÉ =====================
