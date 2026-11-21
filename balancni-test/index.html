@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon.png">
+<title>Balanční test kamerového systému v bytovém domě – postup a vzor | Kamerovka.cz</title>
+<meta name="description" content="Jak zpracovat balanční test ke kamerám v SVJ a bytovém domě podle metodiky ÚOOÚ 2024: 4 kroky, koeficienty ohrožení, časté chyby. Hotový test na míru vašemu domu od 990 Kč.">
+<link rel="canonical" href="https://gdpr.kamerovka.cz/balancni-test/">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:site_name" content="Kamerovka.cz">
+<meta property="og:title" content="Balanční test kamerového systému v bytovém domě – postup a vzor">
+<meta property="og:description" content="4 kroky podle metodiky ÚOOÚ, koeficienty ohrožení a časté chyby. Hotový test na míru domu od 990 Kč.">
+<meta property="og:url" content="https://gdpr.kamerovka.cz/balancni-test/">
+<meta property="og:image" content="https://gdpr.kamerovka.cz/og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[
+{"@type":"Article","headline":"Balanční test kamerového systému v bytovém domě – postup a vzor","inLanguage":"cs","datePublished":"2026-11-21","dateModified":"2026-11-21","author":{"@type":"Organization","name":"Kamerovka.cz","url":"https://www.kamerovka.cz/"},"publisher":{"@type":"Organization","name":"Kamerovka.cz","logo":{"@type":"ImageObject","url":"https://gdpr.kamerovka.cz/logo.png"}},"mainEntityOfPage":"https://gdpr.kamerovka.cz/balancni-test/","image":"https://gdpr.kamerovka.cz/og.png"},
+{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"GDPR dokumentace ke kamerám","item":"https://gdpr.kamerovka.cz/"},{"@type":"ListItem","position":2,"name":"Balanční test","item":"https://gdpr.kamerovka.cz/balancni-test/"}]},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Je balanční test ke kamerám povinný?","acceptedAnswer":{"@type":"Answer","text":"Pokud SVJ nebo jiný správce provozuje kamery na základě oprávněného zájmu (čl. 6 odst. 1 písm. f) GDPR), musí umět doložit, že jeho zájem převažuje nad soukromím obyvatel. Balanční test je způsob, jak to doložit, a metodika ÚOOÚ jeho zpracování doporučuje před spuštěním kamer."}},
+{"@type":"Question","name":"Stačí vzor balančního testu od ÚOOÚ?","acceptedAnswer":{"@type":"Answer","text":"Vzor č. 3 metodiky ÚOOÚ ukazuje postup na modelovém bytovém domě. Test ale musí vycházet ze skutečných událostí, umístění kamer a doby uchování ve vašem domě. Převzatý text s cizími čísly test neobhájí."}},
+{"@type":"Question","name":"Co když se v domě zatím nic nestalo?","acceptedAnswer":{"@type":"Answer","text":"Bez doloženého reálného ohrožení je oprávněný zájem obtížné obhájit. Podle vzoru metodiky má součin koeficientů rozsahu škod a frekvence událostí dosáhnout alespoň 3."}},
+{"@type":"Question","name":"Platí balanční test i pro kamery bez záznamu?","acceptedAnswer":{"@type":"Answer","text":"Ano. Podle metodiky z roku 2024 se GDPR vztahuje i na kamery v režimu online, pokud lze na obraze rozpoznat osoby."}},
+{"@type":"Question","name":"Jak často se balanční test aktualizuje?","acceptedAnswer":{"@type":"Answer","text":"Při každé změně kamerového systému (nová kamera, jiný záběr, delší doba uchování) a doporučeně jednou ročně."}}
+]}]}</script>
+<style>
+:root{--ink:#14202b;--muted:#5b6b78;--line:#dfe5ea;--bg:#f5f7f9;--acc:#0b6e4f;--acc2:#e8f4ef;--warn:#b3261e}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+a{color:var(--acc)}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+header{border-bottom:1px solid var(--line)}
+header .wrap{max-width:980px;display:flex;justify-content:space-between;align-items:center;height:68px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}.logo img{height:36px;width:auto;display:block}.logo .tag{font-size:12px;font-weight:700;color:var(--acc);border:1.5px solid var(--acc);border-radius:6px;padding:2px 7px}
+@media(max-width:480px){.logo img{height:28px}}
+.btn{display:inline-block;background:var(--acc);color:#fff;border:0;border-radius:8px;padding:13px 20px;font-size:16px;font-weight:600;text-decoration:none}
+.btn.ghost{background:#fff;color:var(--acc);border:1.5px solid var(--acc)}
+.crumbs{font-size:14px;color:var(--muted);margin:22px 0 0}
+h1{font-size:clamp(28px,4vw,40px);line-height:1.2;margin:10px 0 14px}
+.lead{font-size:19px;color:var(--muted);margin:0 0 20px}
+h2{font-size:25px;margin:40px 0 12px;line-height:1.25}
+h3{font-size:19px;margin:24px 0 8px}
+table{border-collapse:collapse;width:100%;margin:12px 0;font-size:15px}
+td,th{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--bg)}
+.box{background:var(--acc2);border-radius:12px;padding:20px 22px;margin:28px 0}
+.box h2,.box h3{margin-top:0}
+.note{background:var(--bg);border-left:4px solid var(--acc);padding:12px 16px;border-radius:6px;margin:16px 0;font-size:15px}
+.steps{counter-reset:s;list-style:none;padding:0}
+.steps>li{counter-increment:s;position:relative;padding-left:46px;margin:0 0 18px}
+.steps>li:before{content:counter(s);position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--acc);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+details{border-bottom:1px solid var(--line);padding:14px 0}
+summary{font-weight:600;cursor:pointer}
+details p{color:var(--muted);margin:8px 0 0}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:14px;margin-top:48px}
+footer .wrap{max-width:980px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="logo" href="https://www.kamerovka.cz/"><img src="/logo.png" alt="Kamerovka.cz – Vaše bezpečí, naše priorita"><span class="tag">GDPR</span></a>
+  <a href="/#cenik" class="btn ghost" style="padding:8px 14px;font-size:15px">Objednat</a>
+</div></header>
+
+<main class="wrap">
+<p class="crumbs"><a href="/">GDPR dokumentace ke kamerám</a> › Balanční test</p>
+<h1>Balanční test kamerového systému v bytovém domě</h1>
+<p class="lead">Postup podle metodiky ÚOOÚ z roku 2024 pro SVJ, bytová družstva a vlastníky domů: čtyři kroky, výpočet koeficientů ohrožení a nejčastější chyby, kvůli kterým test při kontrole neobstojí.</p>
+
+<div class="box">
+  <h3>Nechcete test psát sami?</h3>
+  <p style="margin:0">Vyplníte dotazník o domě, kamerách a událostech (asi 7 minut) a dostanete balanční test na míru vašemu domu spolu se záznamem o činnostech, informační tabulkou a směrnicí. PDF i Word, od 990 Kč.</p>
+  <div class="cta"><a class="btn" href="/#form">Vyplnit dotazník</a><a class="btn ghost" href="/#cenik">Ceník</a></div>
+</div>
+
+<h2>Co je balanční test a kdy ho SVJ potřebuje</h2>
+<p>Kamery ve společných částech domu (vchod, chodby, sklepy, garáž) zpracovávají osobní údaje obyvatel i návštěv. Společenství vlastníků je v takovém případě <b>správcem osobních údajů</b>. Souhlas všech obyvatel se pro kamery v domě v praxi nepoužívá – typickým právním základem je <b>oprávněný zájem správce</b> podle čl. 6 odst. 1 písm. f) GDPR, například ochrana majetku a bezpečí osob.</p>
+<p>Oprávněný zájem ale nestačí jen tvrdit. Správce ho má poměřit s právem obyvatel na soukromí a výsledek doložit. Tomuto posouzení se říká <b>balanční test</b> (test proporcionality). Metodika Úřadu pro ochranu osobních údajů k němu nabízí postup ve čtyřech krocích a nezávazný vzor pro bytový dům.</p>
+<div class="note">Podle metodiky z roku 2024 se pravidla týkají i kamer <b>bez záznamu</b> (online přenos), pokud lze na obraze rozpoznat osoby.</div>
+
+<h2>Balanční test krok za krokem</h2>
+<ol class="steps">
+  <li><h3 style="margin-top:0">Existence reálného ohrožení</h3>
+  <p>Popište, co se v domě skutečně stalo: vykradené sklepy, krádeže kol, vandalismus, posprejovaná fasáda, vnikání cizích osob. Uveďte počet událostí, období a odhad škod. Pokud byly události nahlášeny policii, zmiňte to. Obecné „bojíme se krádeží“ nestačí.</p></li>
+  <li><h3 style="margin-top:0">Posouzení jiných prostředků</h3>
+  <p>Ukažte, že účelu nelze dosáhnout mírnějšími prostředky: výměna zámků, čipový přístup, osvětlení s čidlem, samozavírač dveří, výzvy obyvatelům, ostraha. Pokud už je dům vyzkoušel a události pokračují, napište to – je to nejsilnější argument.</p></li>
+  <li><h3 style="margin-top:0">Posouzení nezbytnosti</h3>
+  <p>Vzor metodiky hodnotí rozsah škod a frekvenci událostí koeficienty 1–3 (přepočteno na jeden rok). Je-li jejich součin <b>3 nebo vyšší</b>, je nasazení kamer opodstatněné.</p>
+  <table>
+    <tr><th>Koeficient</th><th>1</th><th>2</th><th>3</th></tr>
+    <tr><td>Rozsah škod za rok</td><td>do 5 000 Kč včetně</td><td>nad 5 000 do 50 000 Kč včetně</td><td>nad 50 000 Kč</td></tr>
+    <tr><td>Frekvence událostí</td><td>méně často než 1× ročně</td><td>častěji než 1× ročně a méně často než 1× měsíčně</td><td>1× měsíčně a častěji</td></tr>
+  </table>
+  <p><b>Příklad:</b> za posledních 24 měsíců 4 vykradené sklepy se škodou celkem 30 000 Kč. Za rok to jsou 2 události (koeficient frekvence 2) a škoda 15 000 Kč (koeficient rozsahu 2). Součin 2 × 2 = 4, kritérium je splněno.</p></li>
+  <li><h3 style="margin-top:0">Posouzení přiměřenosti</h3>
+  <p>Popište opatření, která zásah do soukromí zmírňují: kamery snímají jen společné prostory a ne dveře bytů, záznam se automaticky přemazává po krátké době, nenahrává se zvuk, přístup k záznamům mají jen pověřené osoby a každý přístup se eviduje, u vstupu visí informační tabulky. Zohledněte i to, kde kamery jsou – metodika řadí místa do tříd podle míry zásahu (například kabina výtahu patří mezi citlivější místa).</p></li>
+</ol>
+
+<h2>Jak dlouho uchovávat záznam</h2>
+<p>Pevnou lhůtu zákon ani metodika ÚOOÚ nestanoví. Doba uchování má být co nejkratší a přiměřená účelu – typicky tak dlouhá, aby si výbor stihl všimnout události a záznam zajistit. V bytových domech obvykle stačí <b>72 hodin</b>; delší dobu (například když se sklepy kontrolují jen jednou týdně) je třeba v balančním testu konkrétně zdůvodnit.</p>
+
+<h2>Nejčastější chyby v balančním testu</h2>
+<ul>
+  <li><b>Převzatý vzor s cizími čísly.</b> Vzor ÚOOÚ popisuje modelový dům; test musí odpovídat vašim událostem a kamerám.</li>
+  <li><b>Chybí doložené události.</b> Bez reálného ohrožení test neobstojí, ať je text sebedelší.</li>
+  <li><b>Kamery snímají dveře bytů nebo okna</b> a test to neřeší (maskování obrazu, jiný záběr).</li>
+  <li><b>Doba uchování v testu neodpovídá nastavení rekordéru.</b> Kontrola porovnává dokumenty se skutečností.</li>
+  <li><b>Test bez navazujících dokumentů.</b> K testu patří záznam o činnostech zpracování, informace pro obyvatele, informační tabulky a pravidla přístupu k záznamům.</li>
+  <li><b>Test se neaktualizuje</b> po přidání kamery nebo změně záběru.</li>
+</ul>
+
+<div class="box">
+  <h2>Balanční test na míru vašemu domu</h2>
+  <p>Dotazník se ptá přesně na údaje, které test potřebuje: události a škody, už zavedená opatření, umístění kamer, dobu uchování a kdo má k záznamům přístup. Koeficienty spočítá automaticky a ještě před objednáním upozorní, pokud doložené ohrožení nestačí.</p>
+  <ul style="margin:0 0 8px">
+    <li><b>Základ – 990 Kč:</b> balanční test, záznam o činnostech zpracování, informace o zpracování, informační tabulka k tisku, směrnice a evidence přístupů.</li>
+    <li><b>Standard – 1 990 Kč:</b> navíc pozvánka a podklad pro shromáždění, návrh usnesení, oznámení obyvatelům a 12 měsíců aktualizací zdarma.</li>
+  </ul>
+  <div class="cta"><a class="btn" href="/#form">Vyplnit dotazník</a><a class="btn ghost" href="/">Co dokumentace obsahuje</a></div>
+</div>
+
+<h2>Časté otázky</h2>
+<details><summary>Je balanční test ke kamerám povinný?</summary><p>Pokud SVJ nebo jiný správce provozuje kamery na základě oprávněného zájmu (čl. 6 odst. 1 písm. f) GDPR), musí umět doložit, že jeho zájem převažuje nad soukromím obyvatel. Balanční test je způsob, jak to doložit, a metodika ÚOOÚ jeho zpracování doporučuje před spuštěním kamer.</p></details>
+<details><summary>Stačí vzor balančního testu od ÚOOÚ?</summary><p>Vzor č. 3 metodiky ÚOOÚ ukazuje postup na modelovém bytovém domě. Test ale musí vycházet ze skutečných událostí, umístění kamer a doby uchování ve vašem domě. Převzatý text s cizími čísly test neobhájí.</p></details>
+<details><summary>Co když se v domě zatím nic nestalo?</summary><p>Bez doloženého reálného ohrožení je oprávněný zájem obtížné obhájit. Podle vzoru metodiky má součin koeficientů rozsahu škod a frekvence událostí dosáhnout alespoň 3.</p></details>
+<details><summary>Platí balanční test i pro kamery bez záznamu?</summary><p>Ano. Podle metodiky z roku 2024 se GDPR vztahuje i na kamery v režimu online, pokud lze na obraze rozpoznat osoby.</p></details>
+<details><summary>Jak často se balanční test aktualizuje?</summary><p>Při každé změně kamerového systému (nová kamera, jiný záběr, delší doba uchování) a doporučeně jednou ročně.</p></details>
+
+<p style="margin-top:32px;color:var(--muted);font-size:14px">Zdroj: <a href="https://uoou.gov.cz/media/profesional/met-kamerove-systemy-web-08022024.pdf" rel="noopener">Metodika ÚOOÚ k návrhu a provozování kamerových systémů z hlediska zpracování a ochrany osobních údajů</a> (únor 2024), kap. 3.2.1 a vzor č. 3. Článek má informativní charakter a nenahrazuje právní poradenství. Aktualizováno: listopad 2026.</p>
+<p style="color:var(--muted);font-size:14px">Čtěte také: <a href="https://www.kamerovka.cz/post/kamery-v-bytovém-domě-a-gdpr-co-by-mělo-svj-vědět">Kamery v bytovém domě a GDPR: co by mělo SVJ vědět</a> · <a href="https://www.kamerovka.cz/kamery-pro-svj">Kamerové systémy pro bytové domy a SVJ</a></p>
+</main>
+
+<footer><div class="wrap">Provozovatel: Oleksii Bilan, IČO 19670168, se sídlem Nad sokolovnou 125/9, 147 00 Praha 4. Fyzická osoba podnikající podle živnostenského zákona, zapsaná v živnostenském rejstříku. Nejsem plátce DPH.<br>info@kamerovka.cz · +420 739 487 777 · <a href="/podminky.html">Obchodní podmínky</a> · <a href="/zasady.html">Zásady zpracování osobních údajů</a> · <a href="https://www.kamerovka.cz/">Kamerovka.cz – montáž kamer Praha</a></div></footer>
+</body>
+</html>
