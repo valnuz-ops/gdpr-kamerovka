@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GDPR dokumentace ke kamerám v bytovém domě (SVJ) | Kamerovka.cz</title>
+<meta name="description" content="Balanční test, záznam o činnostech zpracování, informační tabulka a směrnice ke kamerovému systému v SVJ. Podle metodiky ÚOOÚ 2024, hotové do 1 pracovního dne. 990 Kč.">
+<link rel="canonical" href="https://gdpr.kamerovka.cz/">
+<style>
+:root{--ink:#14202b;--muted:#5b6b78;--line:#dfe5ea;--bg:#f5f7f9;--acc:#0b6e4f;--acc2:#e8f4ef;--warn:#b3261e;--warnbg:#fdecea}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.5}
+a{color:var(--acc)}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+header{border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+.logo{font-weight:800;font-size:18px;text-decoration:none;color:var(--ink)}
+.logo span{color:var(--acc)}
+.hero{padding:56px 0 40px;background:linear-gradient(180deg,#fff, var(--bg))}
+.hero h1{font-size:clamp(28px,4.2vw,44px);line-height:1.15;margin:0 0 16px;max-width:760px}
+.hero p.lead{font-size:19px;color:var(--muted);max-width:680px;margin:0 0 24px}
+.btn{display:inline-block;background:var(--acc);color:#fff;border:0;border-radius:8px;padding:14px 22px;font-size:17px;font-weight:600;text-decoration:none;cursor:pointer}
+.btn:disabled{opacity:.5;cursor:default}
+.btn.ghost{background:#fff;color:var(--acc);border:1.5px solid var(--acc)}
+.price{font-size:15px;color:var(--muted);margin-left:14px}
+.badges{display:flex;gap:18px;flex-wrap:wrap;margin-top:22px;color:var(--muted);font-size:15px}
+section{padding:48px 0}
+h2{font-size:28px;margin:0 0 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.card{border:1px solid var(--line);border-radius:12px;padding:18px;background:#fff}
+.card b{display:block;margin-bottom:4px}
+.card p{margin:0;color:var(--muted);font-size:15px}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{counter-increment:s;padding:10px 0 10px 46px;position:relative}
+.steps li:before{content:counter(s);position:absolute;left:0;top:8px;width:32px;height:32px;border-radius:50%;background:var(--acc2);color:var(--acc);font-weight:700;display:flex;align-items:center;justify-content:center}
+details{border-bottom:1px solid var(--line);padding:14px 0}
+summary{font-weight:600;cursor:pointer}
+details p{color:var(--muted);margin:8px 0 0}
+/* formulář */
+#form{background:var(--bg)}
+.panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px}
+.progress{display:flex;gap:6px;margin-bottom:20px}
+.progress div{flex:1;height:6px;border-radius:3px;background:var(--line)}
+.progress div.on{background:var(--acc)}
+.step{display:none}.step.on{display:block}
+.step h3{margin:0 0 4px;font-size:21px}
+.step .hint{color:var(--muted);margin:0 0 18px;font-size:15px}
+label{display:block;font-weight:600;font-size:14px;margin:12px 0 4px}
+input[type=text],input[type=email],input[type=tel],input[type=number],input[type=url],input[type=date],select,textarea{width:100%;padding:10px 12px;border:1px solid #c9d2da;border-radius:8px;font:inherit;font-size:15px;background:#fff}
+textarea{min-height:90px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.row{grid-template-columns:1fr}}
+.cam{border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:10px;position:relative}
+.cam .rm{position:absolute;right:10px;top:8px;border:0;background:none;color:var(--muted);cursor:pointer;font-size:18px}
+.cam .grid4{display:grid;grid-template-columns:1.2fr 1.6fr 1fr .8fr;gap:8px}
+@media(max-width:720px){.cam .grid4{grid-template-columns:1fr 1fr}}
+.inc{border-top:1px solid var(--line);padding:10px 0}
+.inc .more{display:none;grid-template-columns:1fr 1fr 2fr;gap:8px;margin-top:8px}
+.inc.on .more{display:grid}
+@media(max-width:640px){.inc .more{grid-template-columns:1fr 1fr}}
+.chk{display:flex;gap:8px;align-items:flex-start;font-weight:500;margin:8px 0}
+.chk input{margin-top:4px}
+.nav{display:flex;justify-content:space-between;margin-top:22px;gap:10px}
+.note{border-radius:10px;padding:12px 14px;margin-top:14px;font-size:15px}
+.note.warn{background:var(--warnbg);color:var(--warn)}
+.note.ok{background:var(--acc2);color:var(--acc)}
+.err{color:var(--warn);font-size:14px;margin-top:8px;min-height:1em}
+.summary td{padding:4px 8px;border-bottom:1px solid var(--line);font-size:15px;vertical-align:top}
+.hp{position:absolute;left:-5000px}
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+
+<header><div class="wrap">
+  <a class="logo" href="https://kamerovka.cz">Kamerovka<span>.cz</span> · GDPR</a>
+  <a href="#form" class="btn ghost" style="padding:8px 14px;font-size:15px">Objednat</a>
+</div></header>
+
+<div class="hero"><div class="wrap">
+  <h1>GDPR dokumentace ke kamerám v bytovém domě. Dotazník vyplníte za 7 minut.</h1>
+  <p class="lead">Balanční test, záznam o činnostech zpracování, informační tabulky a směrnice pro SVJ. Připravené podle metodiky ÚOOÚ z roku 2024 a podle vašeho skutečného domu, ne obecný vzor ke stažení.</p>
+  <a href="#form" class="btn">Vyplnit dotazník</a><span class="price">990 Kč · nejsme plátci DPH · platba fakturou</span>
+  <div class="badges"><span>✓ podle metodiky ÚOOÚ (únor 2024)</span><span>✓ dokumenty do 1 pracovního dne</span><span>✓ upravitelné i tisknutelné</span></div>
+</div></div>
+
+<section><div class="wrap">
+  <h2>Proč to SVJ potřebuje</h2>
+  <div class="grid">
+    <div class="card"><b>Balanční test je povinný</b><p>Kamery v domě běží na oprávněném zájmu. Ten musí správce posoudit a doložit ještě před spuštěním systému.</p></div>
+    <div class="card"><b>Platí i pro kamery bez záznamu</b><p>Podle metodiky z roku 2024 se GDPR vztahuje i na online kamery, které obraz jen přenášejí.</p></div>
+    <div class="card"><b>Při kontrole nebo stížnosti souseda</b><p>ÚOOÚ si vyžádá dokumentaci. Bez ní hrozí pokuta a příkaz kamery vypnout.</p></div>
+  </div>
+</div></section>
+
+<section style="background:var(--bg)"><div class="wrap">
+  <h2>Co dostanete</h2>
+  <div class="grid">
+    <div class="card"><b>1. Balanční test</b><p>Čtyři kroky podle ÚOOÚ: reálné ohrožení, alternativy, nezbytnost, přiměřenost.</p></div>
+    <div class="card"><b>2. Záznam o činnostech zpracování</b><p>Podle čl. 30 GDPR, včetně technických a organizačních opatření.</p></div>
+    <div class="card"><b>3. Informace o zpracování</b><p>Druhá informační vrstva pro nástěnku nebo web domu.</p></div>
+    <div class="card"><b>4. Informační tabulka</b><p>A4 k vytištění se všemi povinnými údaji.</p></div>
+    <div class="card"><b>5. Směrnice k provozu</b><p>Kdo smí záznamy vidět, jak je předávat a jak vyřizovat žádosti.</p></div>
+    <div class="card"><b>6. Evidence a protokoly</b><p>Kniha přístupů, předávací protokol a návrh usnesení shromáždění.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Jak to funguje</h2>
+  <ol class="steps">
+    <li>Vyplníte dotazník o domě, kamerách a událostech, které se v domě staly.</li>
+    <li>Dokumenty se vygenerují. Než vám je pošleme, zkontroluje je člověk.</li>
+    <li>Do 1 pracovního dne obdržíte PDF a fakturu na 990 Kč.</li>
+  </ol>
+</div></section>
+
+<section id="form"><div class="wrap">
+  <h2>Dotazník</h2>
+  <div class="panel">
+    <div class="progress" id="prog"></div>
+    <form id="f" novalidate>
+      <input type="text" name="web_hp" class="hp" tabindex="-1" autocomplete="off">
+
+      <!-- Krok 1 -->
+      <div class="step on" data-step="1">
+        <h3>Správce a dům</h3>
+        <p class="hint">Správcem osobních údajů je obvykle SVJ (nebo vlastník domu).</p>
+        <div class="row">
+          <div><label>IČO správce</label><input type="text" id="ico" inputmode="numeric" maxlength="8" placeholder="12345678"></div>
+          <div><label>Typ správce</label><select id="typ"><option value="SVJ">Společenství vlastníků (SVJ)</option><option value="BD">Bytové družstvo</option><option value="vlastnik">Vlastník domu</option></select></div>
+        </div>
+        <label>Název</label><input type="text" id="nazev" placeholder="Společenství vlastníků ……">
+        <label>Sídlo</label><input type="text" id="sidlo">
+        <div class="row">
+          <div><label>Adresa domu s kamerami (pokud je jiná než sídlo)</label><input type="text" id="adresa"></div>
+          <div><label>Počet bytových jednotek</label><input type="number" id="pocetBytu" min="1"></div>
+        </div>
+        <label>Schválilo instalaci shromáždění?</label>
+        <select id="schvaleni"><option value="ano">Ano, už schválilo</option><option value="ne">Zatím ne, teprve se bude hlasovat</option><option value="vlastnik">Netýká se, rozhoduje vlastník</option></select>
+        <div id="schvDatumBox"><label>Datum schválení (nepovinné)</label><input type="date" id="schvDatum"></div>
+      </div>
+
+      <!-- Krok 2 -->
+      <div class="step" data-step="2">
+        <h3>Kamery</h3>
+        <p class="hint">Každou kameru zadejte zvlášť. Výchozí doba uchování 72 hodin odpovídá doporučení ÚOOÚ.</p>
+        <div id="cams"></div>
+        <button type="button" class="btn ghost" id="addCam" style="padding:8px 14px;font-size:15px">+ Přidat kameru</button>
+        <label class="chk"><input type="checkbox" id="maskovani" checked> Dveře bytů a okna jsou v obraze zakryté (maskování), nebo kamery na ně nemíří</label>
+        <label class="chk"><input type="checkbox" id="zvuk"> Kamery nahrávají i zvuk</label>
+        <label class="chk"><input type="checkbox" id="ptz"> Některé kamery jsou otočné (PTZ)</label>
+        <div id="duvodBox" style="display:none"><label>Proč je potřeba uchovávat záznam déle než 72 hodin?</label><input type="text" id="duvodUchovani" placeholder="např. výbor kontroluje sklepy jen jednou týdně"></div>
+        <div id="camWarn"></div>
+      </div>
+
+      <!-- Krok 3 -->
+      <div class="step" data-step="3">
+        <h3>Co se v domě stalo</h3>
+        <p class="hint">Bez skutečných událostí balanční test neobstojí. Uveďte, co se v domě stalo, i přibližně.</p>
+        <div class="row">
+          <div><label>Za jaké období</label><select id="obdobi"><option value="12">posledních 12 měsíců</option><option value="24" selected>posledních 24 měsíců</option><option value="36">posledních 36 měsíců</option></select></div>
+          <div><label>Byly některé události oznámeny policii?</label><select id="policie"><option value="1">Ano</option><option value="0">Ne</option></select></div>
+        </div>
+        <div id="incs"></div>
+        <label>Popište situaci vlastními slovy (nepovinné)</label>
+        <textarea id="popisIncidentu" placeholder="např. v zimě 2025 vykradeny 3 sklepy, opakovaně posprejovaná fasáda u vchodu…"></textarea>
+        <div id="scoreBox"></div>
+      </div>
+
+      <!-- Krok 4 -->
+      <div class="step" data-step="4">
+        <h3>Opatření a provoz</h3>
+        <p class="hint">Co dům už vyzkoušel a kdo bude mít k záznamům přístup.</p>
+        <label>Opatření, která dům už zavedl</label>
+        <div id="opat"></div>
+        <label>Proč tato opatření nestačí (nepovinné)</label><input type="text" id="procNestaci" placeholder="např. vchodové dveře zůstávají otevřené kvůli doručovatelům">
+        <div class="row">
+          <div><label>Kdo bude mít přístup k záznamům</label><input type="text" id="osoby" placeholder="předseda a místopředseda výboru"></div>
+          <div><label>Kde je umístěn záznamník (NVR)</label><input type="text" id="ulozeni" placeholder="v uzamčené technické místnosti"></div>
+        </div>
+        <div class="row">
+          <div><label>Servisní firma s přístupem (nepovinné)</label><input type="text" id="zpracovatel" placeholder="název a IČO"></div>
+          <div><label>Náklady na kamerový systém v Kč (nepovinné)</label><input type="number" id="naklady" min="0"></div>
+        </div>
+        <label class="chk"><input type="checkbox" id="vzdaleny"> Záznamy jsou dostupné i vzdáleně (aplikace v mobilu)</label>
+        <label>Web domu pro zveřejnění informací (nepovinné)</label><input type="url" id="web" placeholder="https://">
+      </div>
+
+      <!-- Krok 5 -->
+      <div class="step" data-step="5">
+        <h3>Kontakt a objednávka</h3>
+        <p class="hint">Kontakt pověřené osoby se uvede na tabulce a v dokumentech.</p>
+        <div class="row">
+          <div><label>Jméno pověřené osoby</label><input type="text" id="jmeno"></div>
+          <div><label>Funkce</label><input type="text" id="funkce" placeholder="předseda výboru"></div>
+        </div>
+        <div class="row">
+          <div><label>E-mail</label><input type="email" id="email"></div>
+          <div><label>Telefon (nepovinné)</label><input type="tel" id="telefon"></div>
+        </div>
+        <table class="summary" id="sum" style="margin-top:16px;width:100%;border-collapse:collapse"></table>
+        <label class="chk"><input type="checkbox" id="souhlas"> Potvrzuji, že údaje odpovídají skutečnosti. Beru na vědomí, že dokumenty jsou připraveny podle metodiky ÚOOÚ z mnou zadaných údajů a nejde o právní službu. Cena je 990 Kč, platba fakturou po dodání.</label>
+      </div>
+
+      <div class="err" id="err"></div>
+      <div class="nav">
+        <button type="button" class="btn ghost" id="back">Zpět</button>
+        <button type="button" class="btn" id="next">Pokračovat</button>
+      </div>
+    </form>
+    <div id="done" style="display:none">
+      <h3>Děkujeme, objednávka je přijata</h3>
+      <p>Číslo objednávky: <b id="doneId"></b>. Potvrzení jsme poslali e-mailem. Hotové dokumenty a fakturu dostanete do 1 pracovního dne.</p>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Časté otázky</h2>
+  <details><summary>Nestačí vzor ze stránek ÚOOÚ?</summary><p>ÚOOÚ zveřejňuje nezávazný vzor balančního testu pro modelový dům. Test ale musí odpovídat vašemu domu: skutečným událostem, umístění kamer a době uchování. Právě to dotazník doplní.</p></details>
+  <details><summary>Co když se v domě zatím nic nestalo?</summary><p>Pak oprávněný zájem na kamerách obvykle doložit nelze. Dotazník vás na to upozorní ještě před objednáním a nic vám neúčtujeme.</p></details>
+  <details><summary>Kamera ve výtahu?</summary><p>Výtah patří podle metodiky mezi místa s vysokou mírou zásahu do soukromí. Dokumenty na to upozorní a doporučí posoudit, zda je kamera nezbytná.</p></details>
+  <details><summary>Je to právní služba?</summary><p>Ne. Jde o generátor dokumentů podle veřejné metodiky ÚOOÚ. Odpovědnost za pravdivost údajů a skutečný provoz systému nese správce.</p></details>
+  <details><summary>Instalujete i kamery?</summary><p>Ano, kamerové systémy pro bytové domy v Praze instaluje <a href="https://kamerovka.cz">Kamerovka.cz</a>. K instalaci dokumentaci dodáme zdarma.</p></details>
+</div></section>
+
+<footer><div class="wrap">Provozovatel: Oleksii Bilan, IČO 19670168 · <a href="https://kamerovka.cz">kamerovka.cz</a></div></footer>
+
+<script>
+// ===================== NASTAVENÍ =====================
+const SCRIPT_URL = 'https://script.google.com/macros/s/VAS_DEPLOYMENT_ID/exec';
+// =====================================================
+
+const MISTA = {vchod:'Vstup do domu',schranky:'Poštovní schránky',chodba:'Chodba / schodiště',vytah:'Výtah',sklepy:'Sklepy',kocarkarna:'Kočárkárna / kolárna',garaz:'Garáž / parkoviště',dvur:'Dvůr / zahrada',fasada:'Fasáda / okolí domu',jine:'Jiné'};
+const INCIDENTY = {kradeze_sklepy:'Vykrádání sklepů a společných prostor',kola:'Krádeže kol a kočárků',vandalismus:'Vandalismus, poškozování společných částí',sprejeri:'Posprejování fasády (graffiti)',zasilky:'Krádeže zásilek a pošty',vniknuti:'Vnikání cizích osob do domu',vytah:'Poškozování výtahu',znecisteni:'Znečišťování společných prostor',jine:'Jiné'};
+const OPATRENI = {zamky:'Výměna / posílení zámků',cipy:'Čipový přístupový systém',osvetleni:'Osvětlení s čidlem pohybu',natery:'Antigraffiti nátěr',zavirac:'Samozavírač dveří',vyzvy:'Výzvy obyvatelům',ostraha:'Ostraha / pochůzky'};
+const $ = id => document.getElementById(id);
+let step = 1; const STEPS = 5;
+
+// progress
+$('prog').innerHTML = Array.from({length:STEPS},()=>'<div></div>').join('');
+function show(){
+  document.querySelectorAll('.step').forEach(s=>s.classList.toggle('on', +s.dataset.step===step));
+  [...$('prog').children].forEach((d,i)=>d.classList.toggle('on', i<step));
+  $('back').style.visibility = step===1?'hidden':'visible';
+  $('next').textContent = step===STEPS?'Odeslat objednávku':'Pokračovat';
+  $('err').textContent='';
+  if(step===5) renderSummary();
+}
+
+// kamery
+function camRow(c={misto:'vchod',popis:'',rezim:'zaznam',uchovani:72}){
+  const el=document.createElement('div'); el.className='cam';
+  el.innerHTML=`<button type="button" class="rm" title="Odebrat">×</button>
+  <div class="grid4">
+   <div><label>Umístění</label><select class="c-misto">${Object.entries(MISTA).map(([k,v])=>`<option value="${k}" ${k===c.misto?'selected':''}>${v}</option>`).join('')}</select></div>
+   <div><label>Co snímá</label><input type="text" class="c-popis" value="${c.popis}" placeholder="vchodové dveře zevnitř"></div>
+   <div><label>Režim</label><select class="c-rezim"><option value="zaznam">Se záznamem</option><option value="online" ${c.rezim==='online'?'selected':''}>Jen online</option></select></div>
+   <div><label>Uchování (h)</label><input type="number" class="c-uch" min="1" max="2160" value="${c.uchovani}"></div>
+  </div>`;
+  el.querySelector('.rm').onclick=()=>{el.remove();camCheck();};
+  el.querySelectorAll('select,input').forEach(i=>i.addEventListener('input',camCheck));
+  $('cams').appendChild(el); camCheck();
+}
+function getCams(){return [...document.querySelectorAll('.cam')].map(el=>({misto:el.querySelector('.c-misto').value,popis:el.querySelector('.c-popis').value.trim(),rezim:el.querySelector('.c-rezim').value,uchovani:+el.querySelector('.c-uch').value||72}));}
+function camCheck(){
+  const cams=getCams(); const w=[];
+  document.querySelectorAll('.cam').forEach(el=>{el.querySelector('.c-uch').disabled=el.querySelector('.c-rezim').value==='online';});
+  if(cams.some(c=>c.misto==='vytah')) w.push('Kamera ve výtahu patří podle metodiky ÚOOÚ do třídy 3 (vysoký zásah do soukromí). Dokumenty to zohlední, zvažte ale, zda je nezbytná.');
+  if($('zvuk').checked) w.push('Záznam zvuku je podle metodiky velmi vysoký zásah (třída 4). Doporučujeme zvuk vypnout.');
+  const long=cams.some(c=>c.rezim!=='online'&&c.uchovani>72);
+  $('duvodBox').style.display=long?'block':'none';
+  $('camWarn').innerHTML=w.map(t=>`<div class="note warn">${t}</div>`).join('');
+}
+$('addCam').onclick=()=>camRow();
+['zvuk','ptz'].forEach(id=>$(id).addEventListener('change',camCheck));
+camRow();
+
+// incidenty
+$('incs').innerHTML=Object.entries(INCIDENTY).map(([k,v])=>`<div class="inc" data-k="${k}">
+ <label class="chk"><input type="checkbox" class="i-on"> ${v}</label>
+ <div class="more"><div><label>Kolikrát</label><input type="number" class="i-pocet" min="1" value="1"></div>
+ <div><label>Škoda celkem (Kč)</label><input type="number" class="i-skoda" min="0" placeholder="0"></div>
+ <div><label>Poznámka</label><input type="text" class="i-pozn" placeholder="kde, kdy"></div></div></div>`).join('');
+document.querySelectorAll('.inc').forEach(el=>{
+  el.querySelector('.i-on').addEventListener('change',e=>{el.classList.toggle('on',e.target.checked);score();});
+  el.querySelectorAll('input[type=number]').forEach(i=>i.addEventListener('input',score));
+});
+$('obdobi').addEventListener('change',score);
+function getIncs(){return [...document.querySelectorAll('.inc.on')].map(el=>({typ:el.dataset.k,pocet:+el.querySelector('.i-pocet').value||0,skoda:+el.querySelector('.i-skoda').value||0,poznamka:el.querySelector('.i-pozn').value.trim()}));}
+function calcScore(){
+  const m=+$('obdobi').value; let p=0,s=0; getIncs().forEach(i=>{p+=i.pocet;s+=i.skoda;});
+  const pr=p*12/m, sr=s*12/m;
+  const kr=sr<10000?1:sr<50000?2:3, kc=pr<2?1:pr<=6?2:3;
+  return {score:p?kr*kc:0,pr,sr};
+}
+function score(){
+  const r=calcScore();
+  $('scoreBox').innerHTML = r.score>=3
+   ? `<div class="note ok">Reálné ohrožení je doložitelné (skóre ${r.score}, minimum podle vzoru ÚOOÚ je 3).</div>`
+   : `<div class="note warn">Skóre ohrožení je ${r.score} z potřebných 3. S takto doloženými událostmi balanční test pravděpodobně neobstojí. Doplňte události, pokud nastaly, nebo nám napište, než objednáte.</div>`;
+}
+score();
+
+// opatření
+$('opat').innerHTML=Object.entries(OPATRENI).map(([k,v])=>`<label class="chk"><input type="checkbox" class="o" value="${k}"> ${v}</label>`).join('');
+
+// schválení
+$('schvaleni').addEventListener('change',()=>{$('schvDatumBox').style.display=$('schvaleni').value==='ano'?'block':'none';});
+
+// ARES
+$('ico').addEventListener('input',async e=>{
+  const ico=e.target.value.replace(/\D/g,''); e.target.value=ico;
+  if(ico.length!==8) return;
+  try{
+    const r=await fetch('https://ares.gov.cz/ekonomicke-subjekty-v-be/rest/ekonomicke-subjekty/'+ico);
+    if(!r.ok) return; const j=await r.json();
+    if(j.obchodniJmeno && !$('nazev').value) $('nazev').value=j.obchodniJmeno;
+    if(j.sidlo && j.sidlo.textovaAdresa && !$('sidlo').value) $('sidlo').value=j.sidlo.textovaAdresa;
+  }catch(_){}
+});
+
+function collect(){
+  const v=id=>$(id).value.trim();
+  return {
+    spravce:{nazev:v('nazev'),ico:v('ico'),sidlo:v('sidlo'),typ:v('typ')},
+    objekt:{adresa:v('adresa')||v('sidlo'),pocetBytu:v('pocetBytu')},
+    schvaleni:{stav:v('schvaleni'),datum:$('schvDatum').value?new Date($('schvDatum').value).toLocaleDateString('cs-CZ'):''},
+    kamery:getCams(),
+    provoz:{maskovani:$('maskovani').checked,zvuk:$('zvuk').checked,ptz:$('ptz').checked,duvodUchovani:v('duvodUchovani'),
+      osoby:v('osoby'),ulozeni:v('ulozeni'),zpracovatel:v('zpracovatel'),vzdaleny:$('vzdaleny').checked},
+    obdobiMesicu:+v('obdobi'),policie:v('policie')==='1',incidenty:getIncs(),popisIncidentu:v('popisIncidentu'),
+    opatreni:[...document.querySelectorAll('.o:checked')].map(o=>o.value),proc_nestaci:v('procNestaci'),
+    naklady:+v('naklady')||0,web:v('web'),
+    kontakt:{jmeno:v('jmeno'),funkce:v('funkce'),email:v('email'),telefon:v('telefon')},
+    souhlas:$('souhlas').checked,web_hp:document.querySelector('[name=web_hp]').value
+  };
+}
+
+function validate(s){
+  const d=collect();
+  if(s===1){ if(!/^\d{8}$/.test(d.spravce.ico)) return 'Zadejte IČO (8 číslic).'; if(!d.spravce.nazev) return 'Zadejte název správce.'; if(!d.objekt.adresa) return 'Zadejte sídlo nebo adresu domu.'; }
+  if(s===2){ if(!d.kamery.length) return 'Přidejte alespoň jednu kameru.'; if(d.kamery.some(c=>!c.popis)) return 'U každé kamery vyplňte, co snímá.'; }
+  if(s===3){ if(!d.incidenty.length) return 'Vyberte alespoň jednu událost. Bez doloženého ohrožení nelze balanční test zpracovat.'; }
+  if(s===4){ if(!d.provoz.osoby) return 'Uveďte, kdo bude mít přístup k záznamům.'; }
+  if(s===5){ if(!d.kontakt.jmeno) return 'Zadejte jméno pověřené osoby.'; if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.kontakt.email)) return 'Zadejte platný e-mail.'; if(!d.souhlas) return 'Potvrďte souhlas.'; }
+  return '';
+}
+
+function renderSummary(){
+  const d=collect(), r=calcScore();
+  const rows=[['Správce',`${d.spravce.nazev} (IČO ${d.spravce.ico})`],['Dům',d.objekt.adresa],['Kamery',d.kamery.map(c=>MISTA[c.misto]).join(', ')],
+    ['Události',d.incidenty.reduce((a,i)=>a+i.pocet,0)+' za '+d.obdobiMesicu+' měsíců'],['Skóre ohrožení',r.score+(r.score>=3?' ✓':' – nedostatečné')],['Cena','990 Kč (fakturou po dodání)']];
+  $('sum').innerHTML=rows.map(([a,b])=>`<tr><td><b>${a}</b></td><td>${String(b).replace(/</g,'&lt;')}</td></tr>`).join('');
+}
+
+$('back').onclick=()=>{if(step>1){step--;show();}};
+$('next').onclick=async()=>{
+  const e=validate(step); if(e){$('err').textContent=e;return;}
+  if(step<STEPS){step++;show();window.scrollTo({top:$('form').offsetTop-10,behavior:'smooth'});return;}
+  $('next').disabled=true; $('next').textContent='Odesílám…';
+  try{
+    const res=await fetch(SCRIPT_URL,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(collect())});
+    const j=await res.json();
+    if(!j.ok) throw new Error(j.error||'Chyba');
+    $('f').style.display='none'; $('prog').style.display='none'; $('done').style.display='block'; $('doneId').textContent=j.id;
+  }catch(x){
+    $('err').textContent='Objednávku se nepodařilo odeslat ('+x.message+'). Zkuste to prosím znovu.';
+    $('next').disabled=false; $('next').textContent='Odeslat objednávku';
+  }
+};
+show();
+</script>
+</body>
+</html>
