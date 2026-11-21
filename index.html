@@ -3,6 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
 <title>GDPR dokumentace ke kamerám v bytovém domě (SVJ) | Kamerovka.cz</title>
 <meta name="description" content="Balanční test, záznam o činnostech zpracování, informační tabulka a směrnice ke kamerovému systému v SVJ. Podle metodiky ÚOOÚ 2024, hotové do 1 pracovního dne. 990 Kč.">
 <link rel="canonical" href="https://gdpr.kamerovka.cz/">
@@ -13,9 +16,10 @@ body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-s
 a{color:var(--acc)}
 .wrap{max-width:980px;margin:0 auto;padding:0 20px}
 header{border-bottom:1px solid var(--line)}
-header .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:68px}
 .logo{font-weight:800;font-size:18px;text-decoration:none;color:var(--ink)}
-.logo span{color:var(--acc)}
+.logo{display:flex;align-items:center;gap:10px}.logo img{height:36px;width:auto;display:block}.logo .tag{font-size:12px;font-weight:700;color:var(--acc);border:1.5px solid var(--acc);border-radius:6px;padding:2px 7px}
+@media(max-width:480px){.logo img{height:28px}}
 .hero{padding:56px 0 40px;background:linear-gradient(180deg,#fff, var(--bg))}
 .hero h1{font-size:clamp(28px,4.2vw,44px);line-height:1.15;margin:0 0 16px;max-width:760px}
 .hero p.lead{font-size:19px;color:var(--muted);max-width:680px;margin:0 0 24px}
@@ -121,7 +125,7 @@ input[type=number]{-moz-appearance:textfield}input[type=number]::-webkit-inner-s
 <body>
 
 <header><div class="wrap">
-  <a class="logo" href="https://kamerovka.cz">Kamerovka<span>.cz</span> · GDPR</a>
+  <a class="logo" href="https://kamerovka.cz"><img src="logo.png" alt="Kamerovka.cz – Vaše bezpečí, naše priorita"><span class="tag">GDPR</span></a>
   <a href="#form" class="btn ghost" style="padding:8px 14px;font-size:15px">Objednat</a>
 </div></header>
 
